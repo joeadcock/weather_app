@@ -1,0 +1,41 @@
+header
+  .container.flex.flex-row.justify-between
+    .heading.title
+      = @title
+    .search.flex.flex-row.justify-between.items-center
+      .whitespace-nowrap Address/ZIP:
+      .address(data-controller="places-autocomplete")
+      .flex.flex-col(data-controller="unit-toggle")
+        .whitespace-nowrap
+          = radio_button_tag "units", "imperial", @units == "imperial"
+          = label_tag :units_imperial, "℉"
+        .whitespace-nowrap
+          = radio_button_tag "units", "metric", @units == "metric"
+          = label_tag :units_metric, "℃"
+
+- if @weather
+  .container
+    .flex.flex-row.items-center
+      = image_tag @weather.icon
+      .current-temperature
+        = temp_units(@weather.temperature, @units)
+      .flex.flex-col.justify-center
+        span.todays-low
+          = temp_units(@weather.temperature_min, @units)
+        span.todays-high
+          = temp_units(@weather.temperature_max, @units)
+    h2 Five Day Forecast
+    .forecast.flex.flex-row.justify-start
+      - @weather.daily.each do |daily|
+        .daily-forecast.flex.flex-col.text-center
+          .font-bold
+            = daily[:day]
+          = image_tag daily[:icon]
+          span
+            | low:
+            = temp_units(daily[:temperature_min], @units)
+          span
+            | high:
+            = temp_units(daily[:temperature_max], @units)
+    - if @weather.cached
+      .text-xs cached result, current conditions up to 30 mins delayed

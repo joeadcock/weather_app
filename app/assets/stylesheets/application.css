@@ -8,3 +8,65 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.address { width: 257px }
+
+.container {
+  max-width: 1024px;
+  margin: 10px auto;
+}
+
+.title {
+  font-size: 3em;
+}
+
+.search {
+  width: 370px;
+
+  .label { margin-right: 8px; }
+}
+
+.current-temperature {
+  font-size: 4em;
+  margin-right: .25em;
+}
+
+.todays-low, .todays-high {
+  font-size: 1.2em;
+}
+
+.daily-forecast {
+  border: 1px solid darkgray;
+  border-radius: 8px;
+  margin: 8px;
+  padding: 8px;
+
+  &:first-child { margin-left: 0 }
+  &:last-child { margin-right: 0 }
+
+  img {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.items-center { align-items: center; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-row { flex-direction: row; }
+
+.justify-around { justify-content: space-around; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.justify-start { justify-content: start; }
+
+.font-bold { font-weight: 700; }
+
+.text-center { text-align: center; }
+.text-xs { font-size: 0.75rem }
+
+.whitespace-nowrap { white-space: nowrap; }
