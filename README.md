@@ -52,7 +52,7 @@ Google Places address autocompletion lists some results without a zip code. Beca
 * **`app/controllers/weather_controller.rb`:** Handles browser requests, initiates weather service interaction, and rendering the view
 * **`app/views/weather/show.html.slim`:** Renders the weather app
 * **`app/javascript/controllers/places_autocomplete_controller.js`:** Stimulus Controller that imports and displays Google Place Autocomplete widget, and sends the HTTP request to the backend to retrieve results based on user location selection
-* **`app/services/weather_service/`:** Service that retrieves a forecast for an address, and manages the result caching
+* **`app/services/weather_service.rb`:** Service that retrieves a forecast for an address, and manages the result caching
 * **`lib/open_weather_map/geocoding`:** handles interactions with the OpenWeatherMap Geocoding API for determining the latitude and longitude for a ZIP and country code
 * **`lib/open_weather_map/weather`:** handles interactions with the OpenWeatherMap Weather API for determining the current weather conditions
 * **`lib/open_weather_map/forecast`:** handles interactions with the OpenWeatherMap Forecast API for getting the 5 day forecast, as well as the forcasted high/low temps for the current day
