@@ -27,7 +27,9 @@ WeatherApp is a Ruby on Rails application that displays the current weather cond
    cd weather_app
    ```
 2. **Install Dependencies:**
-   `bundle install`
+   ```bash
+   bundle install
+   ```
 3. **Configure ENV**
    ```bash
    cp .env.example .env
@@ -35,7 +37,9 @@ WeatherApp is a Ruby on Rails application that displays the current weather cond
    ```
    Edit `.env` to include the API keys for both OpenWeatherMap and Google Places
 4. **Start the Rails app**
-   `bundle exec rails server`
+   ```
+   bundle exec rails server
+   ```
 
 The application can be accessed at http://localhost:3000
 
